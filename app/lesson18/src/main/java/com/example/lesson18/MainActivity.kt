@@ -1,10 +1,11 @@
-package com.example.lesson17
+package com.example.lesson18
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.ui.Modifier
 
@@ -13,14 +14,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Box(modifier = Modifier.safeDrawingPadding()) {
+            Box(
+                modifier = Modifier
+                    .safeDrawingPadding()
+                    .safeContentPadding()
+            ) {
                 HomeScreen()
             }
         }
     }
 
     companion object {
-        const val TAG = "lesson1_debug"
+        const val TAG = "lesson18_debug"
     }
 }
 
